@@ -4,6 +4,7 @@ public class Grid{
     private Cell[][] field;
     boolean live;
     int totalBombs;
+    public String difficulty;
     //ask user for difficulty
     // easy : 9x9, 10 mines
     // medium: 16x16, 40 mines
@@ -54,6 +55,7 @@ public class Grid{
     }
     
     private static int getRows(String difficulty) {
+        this.difficulty = difficulty;
         if (difficulty.equals("easy")) {
             return 9;
         } else if (difficulty.equals("medium")) {
@@ -133,5 +135,8 @@ public class Grid{
     public Cell get(int r, int c){
         return field[r][c];
     }
-
+    
+    public String difficulty(){
+        return difficulty;
+    }
 }
