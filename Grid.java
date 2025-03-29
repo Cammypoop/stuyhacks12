@@ -37,12 +37,30 @@ public class Grid{
             // System.out.println(toString()); // Debug
         }
     }
+    public void calculateNumMines(){
+        for (int i = 0; i < field.length; i++){ 
+            for (int j = 0; j < field[0].length; j++){
+                if (field[i][j].getIsMine()){
+                    continue;
+                }
+                int numMines = 0;
+                for (int k = i-1; k <= i+1; k++){
+                    for (int l = j-1; l <= j+1; l++){
+                        if (k >= 0 && l >= 0 && k < field.length && l < field[0].length && field[k][l].getIsMine()){
+                            numMines++;
+                        }
+                    }
+                }
+                field[i][j].setNumMines(numMines);
+            }
+        }
+    }
 
     public String toString(){
         String s = "";
         for (int i = 0; i < field.length; i++){
             for (int j = 0; j < field[0].length; j++){
-                s += field[i][j];
+                s += " " + field[i][j] + " ";
             }
             s += "\n";
         }
