@@ -114,6 +114,15 @@ public class Grid{
         }
     }
 
+    public void lose(){
+        for (int i = 0; i < field.length; i++){
+            for (int j = 0; j < field[0].length; j++){
+                field[i][j].setRevealed(true);
+            }
+        }
+    }
+
+
 
     //accessor methods
 
