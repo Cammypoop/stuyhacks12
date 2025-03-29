@@ -17,7 +17,9 @@ public class Grid{
         while(bombs > 0){
             int x = (int) Math.random() * field.length;
             int y = (int) Math.random() * field[0].length;
-            field.get(x,y).setMine();
+            
+            get(x,y).setMine(true);
+            bombs--;
         }
     }
 
