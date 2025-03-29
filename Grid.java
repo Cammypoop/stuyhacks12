@@ -116,6 +116,7 @@ public class Grid{
         }
     }
 
+
     //accessor methods
 
     public boolean getLive(){

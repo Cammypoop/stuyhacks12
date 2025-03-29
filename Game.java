@@ -9,11 +9,11 @@ public class Game {
     public static String userInput(Scanner in){
       //Move cursor to prompt location
 
-      Text.go(29, 65);
-      //show cursor
-      Text.showCursor();
+    //   Text.go(29, 65);
+    //   //show cursor
+    //   Text.showCursor();
       String input = in.nextLine();
-      Grid grid;
+    //   Grid grid;
 
       //clear the text that was written
       //Text.clear();
