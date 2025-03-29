@@ -67,6 +67,14 @@ public class Grid{
         return s;
     }
 
+    public void reveal(int r, int c){
+        field[r][c].setRevealed(true);
+        if (field[r][c].getIsMine()){
+            live = false;
+            // lose();
+        }
+    }
+
     //accessor methods
 
     public Cell get(int r, int c){
