@@ -9,17 +9,6 @@ public class Grid{
     // medium: 16x16, 40 mines
     // hard : 30x16, 99 mines 
     // if this boolean is false terminate program
-    public Grid(String difficulty){
-        if (difficulty.equals("easy")){
-            this(10, 9, 9);
-        }
-        else if (difficulty.equals("medium")){
-            this(40, 16, 16);
-        }
-        else if (difficulty.equals("hard")){
-            this(99, 30, 16);
-        }
-    }
     public Grid(int bombs, int r, int c){
         int totalBombs = bombs;
         live = true;
@@ -46,6 +35,45 @@ public class Grid{
             }
             bombs--;
             // System.out.println(toString()); // Debug
+        }
+    }
+    public Grid(String difficulty){
+        this(getBombs(difficulty), getRows(difficulty), getColumns(difficulty));
+    }
+    
+    private static int getBombs(String difficulty) {
+        if (difficulty.equals("easy")) {
+            return 10;
+        } else if (difficulty.equals("medium")) {
+            return 40;
+        } else if (difficulty.equals("hard")) {
+            return 99;
+        } else {
+            throw new IllegalArgumentException("Invalid difficulty");
+        }
+    }
+    
+    private static int getRows(String difficulty) {
+        if (difficulty.equals("easy")) {
+            return 9;
+        } else if (difficulty.equals("medium")) {
+            return 16;
+        } else if (difficulty.equals("hard")) {
+            return 30;
+        } else {
+            throw new IllegalArgumentException("Invalid difficulty");
+        }
+    }
+    
+    private static int getColumns(String difficulty) {
+        if (difficulty.equals("easy")) {
+            return 9;
+        } else if (difficulty.equals("medium")) {
+            return 16;
+        } else if (difficulty.equals("hard")) {
+            return 16;
+        } else {
+            throw new IllegalArgumentException("Invalid difficulty");
         }
     }
     public void calculateNumMines(){
