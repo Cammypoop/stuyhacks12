@@ -16,6 +16,6 @@ public class Cell {
         this.isMine = isMine;
     }
     public void setNumMines(int newMines){
-        this.numMines = numMines;
+        this.numMines = newMines;
     }
 }
