@@ -15,7 +15,7 @@ public class Grid{
 
     public void fieldgenerator(int bombs){
         while(bombs > 0){
-            field.get(Math.random()*length(), Math.random()*field[0].length).setBomb();
+            field.get(Math.random()*field.length, Math.random()*field[0].length).setBomb();
         }
     }
 
@@ -23,9 +23,6 @@ public class Grid{
 
     public Cell get(int x, int y){
         return field[x][y];
-    }
-    public int length(){
-        return field.length;
     }
 
 }
