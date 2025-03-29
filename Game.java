@@ -1,14 +1,10 @@
 import java.util.*;
 
-import org.w3c.dom.Text;
+import org.w3c.dom.Text; 
 public class Game {
-    // public static void main(String[] args) {
-    //     Scanner scan = new Scanner(System.in);
-    //     System.out.println("Welcome to Minesweeper!");
-    //     System.out.println("Enter the difficulty you would like to play: easy, medium or hard");
-    //     String difficulty = scan.nextLine();
-    //     Grid g = new Grid(difficulty);
-    // }
+    public static void main(String[] args) {
+        run();
+    }
 
     public static String userInput(Scanner in){
       //Move cursor to prompt location
@@ -34,7 +30,16 @@ public class Game {
         input = userInput(in);
     }
     Grid grid = new Grid(input);
-    
 
+    quit();
+  }
+  public static void quit(){
+    System.out.println("Game over");
+
+  }
+  public boolean validInput(String input){
+    if(input.startsWith("F") || input.startsWith("R")){
+        if(Grid.difficulty().equals("expert");
+    }
   }
 }
