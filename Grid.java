@@ -6,9 +6,20 @@ public class Grid{
     int totalBombs;
     //ask user for difficulty
     // easy : 9x9, 10 mines
-    // intermediate : 16x16, 40 mines
-    // expert : 30x16, 99 mines 
+    // medium: 16x16, 40 mines
+    // hard : 30x16, 99 mines 
     // if this boolean is false terminate program
+    public Grid(String difficulty){
+        if (difficulty.equals("easy")){
+            this(10, 9, 9);
+        }
+        else if (difficulty.equals("medium")){
+            this(40, 16, 16);
+        }
+        else if (difficulty.equals("hard")){
+            this(99, 30, 16);
+        }
+    }
     public Grid(int bombs, int r, int c){
         int totalBombs = bombs;
         live = true;
@@ -76,6 +87,10 @@ public class Grid{
     }
 
     //accessor methods
+
+    public boolean getLive(){
+        return live;
+    }
 
     public Cell get(int r, int c){
         return field[r][c];
