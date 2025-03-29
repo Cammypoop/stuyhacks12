@@ -15,13 +15,17 @@ public class Grid{
 
     public void fieldgenerator(int bombs){
         while(bombs > 0){
-            int x = (int) Math.random() * field.length;
-            int y = (int) Math.random() * field[0].length;
-            
-            get(x,y).setMine(true);
+            int r = (int) Math.random() * field.length;
+            int c = (int) Math.random() * field[0].length;
+            Cell selectedCell = get(r,c);
+            if (selectedCell.getIsMine()){
+                selectedCell.setMine(true);
+            }
             bombs--;
         }
     }
+
+    
 
     //accessor methods
 
