@@ -7,6 +7,18 @@ public class Cell {
         this.isMine = isMine;
     }
 
+    public String toString() {
+        if (isMine) {
+            return "*";
+        } else if (flagged) {
+            return "F";
+        } else if (numMines > 0) {
+            return Integer.toString(numMines);
+        } else {
+            return " ";
+        }
+    }
+
     public int getNumMines() {
         return numMines;
     }

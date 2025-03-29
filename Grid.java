@@ -2,13 +2,14 @@ import java.util.*;
 import java.io.*;
 public class Grid{
     private Cell[][] field;
+    boolean live;
     //ask user for difficulty
     // easy : 9x9, 10 mines
     // intermediate : 16x16, 40 mines
     // expert : 30x16, 99 mines 
-    boolean live = true;
     // if this boolean is false terminate program
     public Grid(int bombs, int r, int c){
+        live = true;
         field = new Cell[r][c];
         fieldgenerator(bombs);
     }
@@ -25,7 +26,16 @@ public class Grid{
         }
     }
 
-    
+    public String toString(){
+        String s = "";
+        for (int i = 0; i < field.length; i++){
+            for (int j = 0; j < field[0].length; j++){
+                s += field[i][j];
+            }
+            s += "\n";
+        }
+        return s;
+    }
 
     //accessor methods
 
