@@ -1,4 +1,4 @@
-public class Stuff{
+public class Game{
     public static void main(String[] args) {
         
     }
